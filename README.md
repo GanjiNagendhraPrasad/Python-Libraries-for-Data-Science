@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1>NumPy File – Complete Detailed Explanation</h1>
+<h1>NumPy  – Complete Detailed Explanation</h1>
 
 <hr>
 
