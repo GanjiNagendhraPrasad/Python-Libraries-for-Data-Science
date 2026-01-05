@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NumPy Detailed Explanation</title>
-</head>
+
 <body>
 
-<h1>NumPy  – Complete Detailed Explanation</h1>
+<h1>NumPy Detailed Explanation</h1>
 
 <hr>
 
