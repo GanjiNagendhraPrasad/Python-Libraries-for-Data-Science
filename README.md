@@ -612,47 +612,6 @@ df['Marks'] = np.sqrt(df['Marks'])
 </code></pre>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Matplotlib Complete Explanation</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.7;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 4px 6px;
-            display: inline-block;
-            border-radius: 4px;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 12px;
-            overflow-x: auto;
-            border-radius: 6px;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 15px 0;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-        }
-        th {
-            background-color: #f0f0f0;
-        }
-    </style>
-</head>
-<body>
 
 <h1>📊 Matplotlib Complete Explanation</h1>
 
@@ -883,8 +842,6 @@ plt.pie(
     <li>Vertical & Horizontal Bar Charts</li>
     <li>Pie Chart with explode</li>
 </ul>
-
-<p>This file covers all core Matplotlib concepts required for beginners to intermediate learners.</p>
 
 </body>
 </html>
