@@ -612,3 +612,279 @@ df['Marks'] = np.sqrt(df['Marks'])
 </code></pre>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matplotlib Complete Explanation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 4px 6px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 12px;
+            overflow-x: auto;
+            border-radius: 6px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📊 Matplotlib Complete Explanation</h1>
+
+<h2>1️⃣ Importing Matplotlib</h2>
+
+<pre><code>import matplotlib.pyplot as plt</code></pre>
+
+<h3>What is Matplotlib?</h3>
+<ul>
+    <li>Matplotlib is a Python library used for data visualization</li>
+    <li>It helps create graphs like line charts, bar charts, histograms, pie charts, etc.</li>
+</ul>
+
+<h3>Why pyplot?</h3>
+<ul>
+    <li><code>pyplot</code> provides MATLAB-style plotting functions</li>
+    <li>Imported as <code>plt</code> to keep code short and readable</li>
+</ul>
+
+<hr>
+
+<h2>2️⃣ Scatter Plot</h2>
+
+<pre><code>
+india = [1,5,6,2,7,4]
+usa = [5,4,1,3,2,6]
+
+plt.figure(figsize=(5,3))
+plt.title('scatterplot')
+plt.xlabel('india')
+plt.ylabel('usa')
+
+plt.scatter(x=india, y=usa, color='r', marker='*')
+plt.show()
+</code></pre>
+
+<h3>What is a Scatter Plot?</h3>
+<ul>
+    <li>Displays the relationship between two variables</li>
+    <li>Each point represents an (x, y) value</li>
+    <li>Used in data analysis and machine learning</li>
+</ul>
+
+<h3>figure(figsize)</h3>
+<p>Creates a plotting area and controls its size in inches.</p>
+
+<h3>Title and Axis Labels</h3>
+<ul>
+    <li><code>plt.title()</code> sets the graph title</li>
+    <li><code>plt.xlabel()</code> sets x-axis label</li>
+    <li><code>plt.ylabel()</code> sets y-axis label</li>
+</ul>
+
+<h3>scatter()</h3>
+
+<table>
+    <tr><th>Parameter</th><th>Description</th></tr>
+    <tr><td>x</td><td>Values for x-axis</td></tr>
+    <tr><td>y</td><td>Values for y-axis</td></tr>
+    <tr><td>color</td><td>Point color</td></tr>
+    <tr><td>marker</td><td>Shape of points</td></tr>
+</table>
+
+<hr>
+
+<h2>3️⃣ Line Chart</h2>
+
+<pre><code>
+plt.plot(india, usa, color='r', marker='*')
+</code></pre>
+
+<h3>What is a Line Chart?</h3>
+<ul>
+    <li>Shows trends over time or sequence</li>
+    <li>Connects data points with lines</li>
+</ul>
+
+<hr>
+
+<h2>4️⃣ Multiple Line Chart</h2>
+
+<pre><code>
+plt.plot(india, usa, color='r', marker='*')
+plt.plot(india, uk, color='g', marker='*')
+</code></pre>
+
+<h3>Purpose</h3>
+<ul>
+    <li>Used to compare multiple datasets</li>
+    <li>Each line represents a different dataset</li>
+</ul>
+
+<hr>
+
+<h2>5️⃣ Legend</h2>
+
+<pre><code>
+plt.plot(india, usa, marker='*', label='india-usa')
+plt.plot(india, uk, marker='*', label='india-uk')
+plt.legend()
+</code></pre>
+
+<h3>Legend Explanation</h3>
+<ul>
+    <li>Explains what each line represents</li>
+    <li><code>label</code> is passed inside plot</li>
+    <li><code>plt.legend()</code> displays it</li>
+</ul>
+
+<hr>
+
+<h2>6️⃣ Subplots</h2>
+
+<h3>Row-wise Subplot</h3>
+
+<pre><code>
+plt.subplot(1,2,1)
+plt.subplot(1,2,2)
+</code></pre>
+
+<h3>Column-wise Subplot</h3>
+
+<pre><code>
+plt.subplot(2,1,1)
+plt.subplot(2,1,2)
+</code></pre>
+
+<h3>Why Subplots?</h3>
+<ul>
+    <li>Multiple graphs in one window</li>
+    <li>Better comparison</li>
+    <li>Used in dashboards</li>
+</ul>
+
+<hr>
+
+<h2>7️⃣ Histogram</h2>
+
+<pre><code>
+plt.hist(x=age, color='r')
+</code></pre>
+
+<h3>What is a Histogram?</h3>
+<ul>
+    <li>Shows frequency distribution</li>
+    <li>Data is divided into bins</li>
+</ul>
+
+<h3>Histogram with Bins</h3>
+
+<pre><code>
+plt.hist(x=age, color='b', bins=4)
+</code></pre>
+
+<hr>
+
+<h2>8️⃣ Vertical Bar Chart</h2>
+
+<pre><code>
+plt.bar(company_names, revenue)
+</code></pre>
+
+<h3>Bar Chart Explanation</h3>
+<ul>
+    <li>Used to compare categories</li>
+    <li>Height represents value</li>
+</ul>
+
+<hr>
+
+<h2>9️⃣ Horizontal Bar Chart</h2>
+
+<pre><code>
+plt.barh(company_names, revenue)
+</code></pre>
+
+<table>
+    <tr><th>Vertical</th><th>Horizontal</th></tr>
+    <tr><td>bar()</td><td>barh()</td></tr>
+    <tr><td>Categories on X</td><td>Categories on Y</td></tr>
+</table>
+
+<hr>
+
+<h2>🔟 Pie Chart</h2>
+
+<pre><code>
+plt.pie(revenue, labels=company_names)
+</code></pre>
+
+<h3>Pie Chart Usage</h3>
+<ul>
+    <li>Shows percentage contribution</li>
+    <li>Used for market share and distribution</li>
+</ul>
+
+<h3>Advanced Pie Chart</h3>
+
+<pre><code>
+plt.pie(
+    revenue,
+    labels=company_names,
+    shadow=True,
+    autopct='%.2f',
+    explode=[0,0,0.2,0]
+)
+</code></pre>
+
+<table>
+    <tr><th>Parameter</th><th>Description</th></tr>
+    <tr><td>labels</td><td>Names for slices</td></tr>
+    <tr><td>shadow</td><td>3D shadow effect</td></tr>
+    <tr><td>autopct</td><td>Shows percentage</td></tr>
+    <tr><td>explode</td><td>Separates slices</td></tr>
+</table>
+
+<hr>
+
+<h2>✅ Final Summary</h2>
+
+<ul>
+    <li>Scatter Plot</li>
+    <li>Line Plot</li>
+    <li>Multiple Line Plot</li>
+    <li>Legends</li>
+    <li>Subplots</li>
+    <li>Histogram</li>
+    <li>Vertical & Horizontal Bar Charts</li>
+    <li>Pie Chart with explode</li>
+</ul>
+
+<p>This file covers all core Matplotlib concepts required for beginners to intermediate learners.</p>
+
+</body>
+</html>
