@@ -302,3 +302,313 @@ machine learning, and scientific computing.
 
 </body>
 </html>
+
+
+
+
+<h2>1️⃣ Introduction to Pandas</h2>
+
+<h3>What is Pandas?</h3>
+<p>
+Pandas is a <b>Python library</b> used for:
+</p>
+<ul>
+  <li>Data analysis</li>
+  <li>Data manipulation</li>
+  <li>Data cleaning</li>
+  <li>Handling structured data (tables)</li>
+</ul>
+
+<h3>Why Pandas?</h3>
+<ul>
+  <li>Fast and efficient</li>
+  <li>Easy handling of missing data</li>
+  <li>Works well with NumPy, Matplotlib, and Seaborn</li>
+</ul>
+
+<pre><code>import pandas as pd</code></pre>
+
+<hr>
+
+<h2>2️⃣ Pandas Series</h2>
+
+<h3>What is a Series?</h3>
+<p>
+A <b>Series</b> is a <b>one-dimensional labeled array</b>.
+</p>
+
+<h3>Creating a Series from a List</h3>
+<pre><code>
+s = pd.Series([10, 20, 30, 40])
+print(s)
+</code></pre>
+
+<p>✔ Automatically assigns index<br>✔ Data type inferred</p>
+
+<h3>Creating Series with Custom Index</h3>
+<pre><code>
+s = pd.Series([10, 20, 30], index=['a', 'b', 'c'])
+</code></pre>
+
+<h3>Series from Dictionary</h3>
+<pre><code>
+data = {'Math': 90, 'Science': 85, 'English': 88}
+s = pd.Series(data)
+</code></pre>
+
+<p>✔ Keys → Index<br>✔ Values → Data</p>
+
+<h3>Accessing Series Data</h3>
+<pre><code>
+s['Math']
+s[0]
+</code></pre>
+
+<hr>
+
+<h2>3️⃣ Pandas DataFrame</h2>
+
+<h3>What is a DataFrame?</h3>
+<p>
+A <b>2-dimensional table-like structure</b> with:
+</p>
+<ul>
+  <li>Rows</li>
+  <li>Columns</li>
+  <li>Index</li>
+  <li>Column names</li>
+</ul>
+
+<h3>Creating DataFrame from Dictionary</h3>
+<pre><code>
+data = {
+    'Name': ['A', 'B', 'C'],
+    'Age': [20, 21, 22],
+    'Marks': [85, 90, 88]
+}
+
+df = pd.DataFrame(data)
+print(df)
+</code></pre>
+
+<h3>Creating DataFrame with Custom Index</h3>
+<pre><code>
+df = pd.DataFrame(data, index=['s1', 's2', 's3'])
+</code></pre>
+
+<hr>
+
+<h2>4️⃣ DataFrame Attributes</h2>
+<pre><code>
+df.shape
+df.size
+df.ndim
+df.columns
+df.index
+df.dtypes
+</code></pre>
+
+<hr>
+
+<h2>5️⃣ Viewing Data</h2>
+<pre><code>
+df.head()
+df.head(2)
+df.tail()
+df.tail(3)
+</code></pre>
+
+<hr>
+
+<h2>6️⃣ Selecting Data</h2>
+
+<h3>Column Selection</h3>
+<pre><code>
+df['Name']
+df[['Name', 'Marks']]
+</code></pre>
+
+<h3>Row Selection using loc (Label-based)</h3>
+<pre><code>
+df.loc['s1']
+df.loc['s1', 'Marks']
+</code></pre>
+
+<h3>Row Selection using iloc (Index-based)</h3>
+<pre><code>
+df.iloc[0]
+df.iloc[0, 2]
+</code></pre>
+
+<hr>
+
+<h2>7️⃣ Adding Columns</h2>
+<pre><code>
+df['Result'] = ['Pass', 'Pass', 'Pass']
+</code></pre>
+
+<hr>
+
+<h2>8️⃣ Modifying Data</h2>
+<pre><code>
+df['Marks'] = df['Marks'] + 5
+</code></pre>
+
+<hr>
+
+<h2>9️⃣ Dropping Rows and Columns</h2>
+
+<h3>Drop Column</h3>
+<pre><code>
+df.drop('Age', axis=1)
+</code></pre>
+
+<h3>Drop Row</h3>
+<pre><code>
+df.drop('s1', axis=0)
+</code></pre>
+
+<p><b>⚠ Note:</b> Use <code>inplace=True</code> to modify original DataFrame</p>
+
+<hr>
+
+<h2>🔟 Handling Missing Values (NaN)</h2>
+
+<h3>Creating Missing Data</h3>
+<pre><code>
+import numpy as np
+df.loc['s2', 'Marks'] = np.nan
+</code></pre>
+
+<h3>Checking Missing Values</h3>
+<pre><code>
+df.isnull()
+df.isnull().sum()
+</code></pre>
+
+<h3>Filling Missing Values</h3>
+<pre><code>
+df.fillna(0)
+df.fillna(df.mean())
+</code></pre>
+
+<h3>Dropping Missing Values</h3>
+<pre><code>
+df.dropna()
+</code></pre>
+
+<hr>
+
+<h2>1️⃣1️⃣ Filtering Data</h2>
+
+<h3>Conditional Filtering</h3>
+<pre><code>
+df[df['Marks'] > 85]
+</code></pre>
+
+<h3>Multiple Conditions</h3>
+<pre><code>
+df[(df['Marks'] > 80) & (df['Age'] > 20)]
+</code></pre>
+
+<hr>
+
+<h2>1️⃣2️⃣ Sorting Data</h2>
+<pre><code>
+df.sort_values(by='Marks')
+df.sort_values(by='Marks', ascending=False)
+</code></pre>
+
+<hr>
+
+<h2>1️⃣3️⃣ Statistical Functions</h2>
+<pre><code>
+df['Marks'].mean()
+df['Marks'].sum()
+df['Marks'].min()
+df['Marks'].max()
+df['Marks'].count()
+</code></pre>
+
+<hr>
+
+<h2>1️⃣4️⃣ Descriptive Statistics</h2>
+<pre><code>
+df.describe()
+</code></pre>
+
+<hr>
+
+<h2>1️⃣5️⃣ Reading Data from Files</h2>
+
+<h3>CSV File</h3>
+<pre><code>
+df = pd.read_csv('data.csv')
+</code></pre>
+
+<h3>Excel File</h3>
+<pre><code>
+df = pd.read_excel('data.xlsx')
+</code></pre>
+
+<hr>
+
+<h2>1️⃣6️⃣ Writing Data to Files</h2>
+<pre><code>
+df.to_csv('output.csv', index=False)
+df.to_excel('output.xlsx', index=False)
+</code></pre>
+
+<hr>
+
+<h2>1️⃣7️⃣ Index Operations</h2>
+<pre><code>
+df.set_index('Name')
+df.reset_index()
+</code></pre>
+
+<hr>
+
+<h2>1️⃣8️⃣ Applying Functions</h2>
+<pre><code>
+df['Marks'].apply(lambda x: x + 2)
+</code></pre>
+
+<hr>
+
+<h2>1️⃣9️⃣ Value Counts</h2>
+<pre><code>
+df['Result'].value_counts()
+</code></pre>
+
+<hr>
+
+<h2>2️⃣0️⃣ Unique Values</h2>
+<pre><code>
+df['Result'].unique()
+df['Result'].nunique()
+</code></pre>
+
+<hr>
+
+<h2>2️⃣1️⃣ Renaming Columns</h2>
+<pre><code>
+df.rename(columns={'Marks': 'Score'})
+</code></pre>
+
+<hr>
+
+<h2>2️⃣2️⃣ Data Type Conversion</h2>
+<pre><code>
+df['Age'] = df['Age'].astype(float)
+</code></pre>
+
+<hr>
+
+<h2>2️⃣3️⃣ Pandas with NumPy</h2>
+<pre><code>
+import numpy as np
+df['Marks'] = np.sqrt(df['Marks'])
+</code></pre>
+
+
